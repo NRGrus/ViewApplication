@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.grid_layout);
+        setContentView(R.layout.constraint_layout);
+//        setContentView(R.layout.grid_layout);
     }
 
 //    protected void onCreate (Bundle savedInstanceState) {
