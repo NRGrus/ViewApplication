@@ -6,6 +6,7 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,7 +17,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.eighth_layout);
+        FrameLayout frameLayout = new FrameLayout(this);
+        TextView textView1 = new TextView(this);
+        textView1.setText("Hello World!");
+
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
+
+        textView1.setLayoutParams(layoutParams);
+        textView1.setTextSize(26);
+        frameLayout.addView(textView1);
+
+        setContentView(frameLayout);
+//        setContentView(R.layout.frame_layout);
+
+//        setContentView(R.layout.eighth_layout);
     }
 
 //    protected void onCreate (Bundle savedInstanceState) {
