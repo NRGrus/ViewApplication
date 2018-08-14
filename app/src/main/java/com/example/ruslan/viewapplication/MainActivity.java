@@ -16,27 +16,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        LinearLayout linearLayout = new LinearLayout(this);
-        TextView textView = new TextView(this);
-        textView.setText("Hello Android 7");
-        textView.setTextSize(22);
-        textView.setBackgroundColor(0xffe8eaf6);
-
-        textView.setGravity(Gravity.CENTER);
-
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, 200
-        );
-
-        layoutParams.gravity = Gravity.CENTER;
-        textView.setLayoutParams(layoutParams);
-
-        linearLayout.addView(textView);
-        setContentView(linearLayout);
-
-
-//        setContentView(R.layout.seventh_layout);
+        setContentView(R.layout.eighth_layout);
     }
+
+//    protected void onCreate (Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        LinearLayout linearLayout = new LinearLayout(this);
+//        TextView textView = new TextView(this);
+//        textView.setText("Hello Android 7");
+//        textView.setTextSize(22);
+//        textView.setBackgroundColor(0xffe8eaf6);
+//
+//        textView.setGravity(Gravity.CENTER);
+//
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+//                LinearLayout.LayoutParams.MATCH_PARENT, 200
+//        );
+//
+//        layoutParams.gravity = Gravity.CENTER;
+//        textView.setLayoutParams(layoutParams);
+//
+//        linearLayout.addView(textView);
+//        setContentView(linearLayout);
+//
+//
+////        setContentView(R.layout.seventh_layout);
+//    }
 
 
 //    protected void onCreate (Bundle savedInstanceState) {
