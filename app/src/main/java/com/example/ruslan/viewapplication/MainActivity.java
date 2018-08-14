@@ -3,6 +3,7 @@ package com.example.ruslan.viewapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,25 +14,61 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    int clicks = 0;
     @Override
-    protected void onCreate (Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.group_layout);
 
-        ScrollView scrollView = new ScrollView(this);
+        View topButtonPanel = findViewById(R.id.top_button_panel);
+        View botttomButtonPanel = findViewById(R.id.bottom_button_panel);
+        final TextView clicksText = findViewById(R.id.clicksText);
 
-        TextView textView1 = new TextView(this);
-        textView1.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry...like Aldus PageMaker including versions of Lorem Ipsum.");
-        textView1.setLayoutParams(new ViewGroup.LayoutParams
-                (ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        textView1.setTextSize(26);
-        scrollView.addView(textView1);
-        setContentView(scrollView);
+        Button topButton = topButtonPanel.findViewById(R.id.clickBtn);
+        Button bottomButton = botttomButtonPanel.findViewById(R.id.clickBtn);
 
-//        setContentView(R.layout.scroll_layout);
-//        setContentView(R.layout.constraint_layout);
-//        setContentView(R.layout.grid_layout);
+        topButton.setText("+");
+        bottomButton.setText("-");
+
+        topButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clicks++;
+                clicksText.setText(clicks + " Clicks");
+            }
+        });
+
+        bottomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clicks--;
+                clicksText.setText(clicks + " Clicks");
+            }
+        });
     }
+
+    public void onClick(View view){
+        TextView clicksText = findViewById(R.id.clicksText);
+        clicks++;
+        clicksText.setText(clicks + " Clicks");
+    }
+//    protected void onCreate (Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        ScrollView scrollView = new ScrollView(this);
+//
+//        TextView textView1 = new TextView(this);
+//        textView1.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry...like Aldus PageMaker including versions of Lorem Ipsum.");
+//        textView1.setLayoutParams(new ViewGroup.LayoutParams
+//                (ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//        textView1.setTextSize(26);
+//        scrollView.addView(textView1);
+//        setContentView(scrollView);
+//
+////        setContentView(R.layout.scroll_layout);
+////        setContentView(R.layout.constraint_layout);
+////        setContentView(R.layout.grid_layout);
+//    }
 
 //    protected void onCreate (Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
