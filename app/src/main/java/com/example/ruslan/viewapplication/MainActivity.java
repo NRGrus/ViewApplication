@@ -9,22 +9,46 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         RelativeLayout relativeLayout = new RelativeLayout(this);
         TextView textView1 = new TextView(this);
-        textView1.setText("Hello Android 7");
+        textView1.setBackgroundColor(0xFFBDBDBD);
+        textView1.setText("Zhumabek Ruslan");
         textView1.setTextSize(26);
 
-        textView1.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, 200);
 
+        layoutParams.setMargins(30, 40, 50, 60);
+        textView1.setLayoutParams(layoutParams);
+        textView1.setPadding(30, 30, 30, 30);
         relativeLayout.addView(textView1);
-//        setContentView(relativeLayout);
 
-        setContentView(R.layout.third_layout);
+        setContentView(relativeLayout);
+//        setContentView(R.layout.fourth_layout);
     }
+
+
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//
+//        RelativeLayout relativeLayout = new RelativeLayout(this);
+//        TextView textView1 = new TextView(this);
+//        textView1.setText("Zhumabek Ruslan");
+//        textView1.setTextSize(26);
+//
+//        textView1.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//
+//        relativeLayout.addView(textView1);
+//        setContentView(relativeLayout);
+//
+////        setContentView(R.layout.third_layout);
+//    }
+
+
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
