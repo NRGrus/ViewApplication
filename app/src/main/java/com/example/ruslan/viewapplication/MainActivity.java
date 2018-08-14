@@ -2,6 +2,7 @@ package com.example.ruslan.viewapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,34 +16,60 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        RelativeLayout relativeLayout = new RelativeLayout(this);
+        LinearLayout linearLayout = new LinearLayout(this);
+        TextView textView = new TextView(this);
+        textView.setText("Hello Android 7");
+        textView.setTextSize(22);
+        textView.setBackgroundColor(0xffe8eaf6);
 
-        EditText editText = new EditText(this);
-        editText.setId('1');
+        textView.setGravity(Gravity.CENTER);
 
-        Button button = new Button(this);
-        button.setText("SEND");
-
-        RelativeLayout.LayoutParams editTextParams = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.MATCH_PARENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, 200
         );
-        editTextParams.addRule(RelativeLayout.CENTER_IN_PARENT);
-        relativeLayout.addView(editText, editTextParams);
+
+        layoutParams.gravity = Gravity.CENTER;
+        textView.setLayoutParams(layoutParams);
+
+        linearLayout.addView(textView);
+        setContentView(linearLayout);
 
 
-        RelativeLayout.LayoutParams buttonParams = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT
-        );
-        buttonParams.addRule(RelativeLayout.BELOW, editText.getId());
-        buttonParams.addRule(RelativeLayout.ALIGN_RIGHT, editText.getId());
-        relativeLayout.addView(button, buttonParams);
-
-        setContentView(relativeLayout);
-
-//        setContentView(R.layout.sixth_layout);
+//        setContentView(R.layout.seventh_layout);
     }
+
+
+//    protected void onCreate (Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        RelativeLayout relativeLayout = new RelativeLayout(this);
+//
+//        EditText editText = new EditText(this);
+//        editText.setId('1');
+//
+//        Button button = new Button(this);
+//        button.setText("SEND");
+//
+//        RelativeLayout.LayoutParams editTextParams = new RelativeLayout.LayoutParams(
+//                RelativeLayout.LayoutParams.MATCH_PARENT,
+//                RelativeLayout.LayoutParams.WRAP_CONTENT
+//        );
+//        editTextParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+//        relativeLayout.addView(editText, editTextParams);
+//
+//
+//        RelativeLayout.LayoutParams buttonParams = new RelativeLayout.LayoutParams(
+//                RelativeLayout.LayoutParams.WRAP_CONTENT,
+//                RelativeLayout.LayoutParams.WRAP_CONTENT
+//        );
+//        buttonParams.addRule(RelativeLayout.BELOW, editText.getId());
+//        buttonParams.addRule(RelativeLayout.ALIGN_RIGHT, editText.getId());
+//        relativeLayout.addView(button, buttonParams);
+//
+//        setContentView(relativeLayout);
+//
+////        setContentView(R.layout.sixth_layout);
+//    }
 //    protected void onCreate (Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //
