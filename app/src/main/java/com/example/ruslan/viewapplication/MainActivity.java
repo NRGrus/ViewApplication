@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +18,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.constraint_layout);
+        ScrollView scrollView = new ScrollView(this);
+
+        TextView textView1 = new TextView(this);
+        textView1.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry...like Aldus PageMaker including versions of Lorem Ipsum.");
+        textView1.setLayoutParams(new ViewGroup.LayoutParams
+                (ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        textView1.setTextSize(26);
+        scrollView.addView(textView1);
+        setContentView(scrollView);
+
+//        setContentView(R.layout.scroll_layout);
+//        setContentView(R.layout.constraint_layout);
 //        setContentView(R.layout.grid_layout);
     }
 
