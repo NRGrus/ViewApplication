@@ -3,6 +3,7 @@ package com.example.ruslan.viewapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -12,23 +13,40 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        RelativeLayout relativeLayout = new RelativeLayout(this);
+        LinearLayout linearLayout = new LinearLayout(this);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
         TextView textView1 = new TextView(this);
-        textView1.setBackgroundColor(0xFFBDBDBD);
-        textView1.setText("Zhumabek Ruslan");
-        textView1.setTextSize(26);
+        textView1.setText("Hello");
+        linearLayout.addView(textView1, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        TextView textView2 = new TextView(this);
+        textView2.setText("Ruslan");
+        linearLayout.addView(textView2, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-        layoutParams.setMargins(30, 40, 50, 60);
-        textView1.setLayoutParams(layoutParams);
-        textView1.setPadding(30, 30, 30, 30);
-        relativeLayout.addView(textView1);
-
-        setContentView(relativeLayout);
-//        setContentView(R.layout.fourth_layout);
+        setContentView(linearLayout);
+//        setContentView(R.layout.fifth_layout);
     }
+
+//    protected void onCreate (Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        RelativeLayout relativeLayout = new RelativeLayout(this);
+//        TextView textView1 = new TextView(this);
+//        textView1.setBackgroundColor(0xFFBDBDBD);
+//        textView1.setText("Zhumabek Ruslan");
+//        textView1.setTextSize(26);
+//
+//        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT, 200);
+//
+//        layoutParams.setMargins(30, 40, 50, 60);
+//        textView1.setLayoutParams(layoutParams);
+//        textView1.setPadding(30, 30, 30, 30);
+//        relativeLayout.addView(textView1);
+//
+//        setContentView(relativeLayout);
+////        setContentView(R.layout.fourth_layout);
+//    }
 
 
 //    protected void onCreate(Bundle savedInstanceState) {
