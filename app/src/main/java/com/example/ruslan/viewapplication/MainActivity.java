@@ -17,25 +17,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        FrameLayout frameLayout = new FrameLayout(this);
-        TextView textView1 = new TextView(this);
-        textView1.setText("Hello World!");
-
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT
-        );
-
-        layoutParams.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
-
-        textView1.setLayoutParams(layoutParams);
-        textView1.setTextSize(26);
-        frameLayout.addView(textView1);
-
-        setContentView(frameLayout);
-//        setContentView(R.layout.frame_layout);
-
-//        setContentView(R.layout.eighth_layout);
+        setContentView(R.layout.grid_layout);
     }
+
+//    protected void onCreate (Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        FrameLayout frameLayout = new FrameLayout(this);
+//        TextView textView1 = new TextView(this);
+//        textView1.setText("Hello World!");
+//
+//        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+//                FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT
+//        );
+//
+//        layoutParams.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
+//
+//        textView1.setLayoutParams(layoutParams);
+//        textView1.setTextSize(26);
+//        frameLayout.addView(textView1);
+//
+//        setContentView(frameLayout);
+////        setContentView(R.layout.frame_layout);
+//
+////        setContentView(R.layout.eighth_layout);
+//    }
 
 //    protected void onCreate (Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
